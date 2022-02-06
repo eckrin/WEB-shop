@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header"/>
+<style>
+ .fieldError {
+ border-color: #bd2130;
+ }
+</style>
+<body>
+<div class="container">
+    <div th:replace="fragments/bodyHeader :: bodyHeader"/>
+    <form role="form" action="/login" th:object="${memberForm}" method="post">
+        <div class="form-group">
+            <label th:for="loginId">ID</label>
+            <input type="text" th:field="*{loginId}" class="form-control" placeholder="Input ID" required>
+        </div>
+        <div class="form-group">
+            <label th:for="loginPw">PW</label>
+            <input type="password" th:field="*{loginPw}" class="form-control" placeholder="Input PW" required>
+        </div>
+        <button type="submit" class="btn btn-primary">LOGIN</button>
+    </form>
+    <div class="caption">
+        <a href="/">Forgot Password?</a>
+        <a href="/signup">Sign Up</a>
+    </div>
+    <div th:replace="fragments/footer :: footer" />
+</div>
+</body>
+</html>

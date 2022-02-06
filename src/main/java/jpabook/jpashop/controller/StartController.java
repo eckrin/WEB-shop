@@ -2,13 +2,16 @@ package jpabook.jpashop.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class HomeController {
+@Slf4j
+public class StartController {
 
-    @RequestMapping("/home")
+    @RequestMapping("/")
     public String home() {
-        return "home";
+        log.info("home controller"); //로그찍기
+        return "login";
     }
 }

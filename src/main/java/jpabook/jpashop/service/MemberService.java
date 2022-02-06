@@ -15,22 +15,10 @@ import java.util.List;
 public class MemberService {
 
 //    @Autowired
-    //컴파일시점 체크를 위해 final로 설정
     private final MemberRepository memberRepository;
 
-    //constructor injection
     // = @AllArgsConstructor : 모든 필드에 대해서 생성자 지정
     // = @RequiredArgsConstructor : final 필드에 대해서 생성자 지정
-//    @Autowired
-//    public MemberService(MemberRepository memberRepository) {
-//        this.memberRepository = memberRepository;
-//    }
-
-    //setter injection
-//    @Autowired
-//    public void setMemberRepository(MemberRepository memberRepository) {
-//        this.memberRepository = memberRepository;
-//    }
 
     /**
      * 회원 등록, id반환
