@@ -16,7 +16,7 @@ public class Member {
     private Long id;
 
     private String loginId;
-    private String loginPassword;
+    private String loginPw;
 
     private String name;
 

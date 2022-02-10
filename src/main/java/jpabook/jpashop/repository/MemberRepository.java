@@ -31,4 +31,11 @@ public class MemberRepository {
                 .setParameter("name", name)
                 .getResultList();
     }
+
+    //로그인기능을 위해 > 일단 중복을 고려하지 않음(동일id는 1개라고 가정)
+    public List<Member> findByLoginId(String loginId) {
+        return em.createQuery("select m from Member m where m.loginId = :loginId", Member.class)
+                .setParameter("loginId", loginId)
+                .getResultList();
+    }
 }

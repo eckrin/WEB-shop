@@ -48,4 +48,16 @@ public class MemberService {
     public Member findOne(Long memberId) {
         return memberRepository.findOne(memberId);
     }
+
+    /**
+     * 로그인 기능
+     */
+    public boolean signIn(Member member) {
+        List<Member> findMember = memberRepository.findByLoginId(member.getLoginId());
+        if(findMember.isEmpty())
+            return false;
+        else if(findMember.get(0).getLoginPw().equals(member.getLoginPw()))
+            return true;
+        return false;
+    }
 }

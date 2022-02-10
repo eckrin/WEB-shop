@@ -26,10 +26,11 @@ public class LoginController {
 
         Member member = new Member();
         member.setLoginId(form.getLoginId());
-        member.setLoginPassword(form.getLoginPw());
+        member.setLoginPw(form.getLoginPw());
 
-        memberService.join(member);
-
-        return "login/signInForm";
+        if(memberService.signIn(member))
+            return "home";
+        else
+            return "login";
     }
 }
